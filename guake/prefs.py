@@ -718,10 +718,7 @@ class PrefsDialog(SimpleGladeApp):
         renderer.connect("accel-edited", self.on_accel_edited)
         renderer.connect("accel-cleared", self.on_accel_cleared)
         column = Gtk.TreeViewColumn(_("Shortcut"), renderer, text=2)
-        column.pack_start(renderer, True)
         column.set_property("expand", False)
-        column.add_attribute(renderer, "accel-mods", 0)
-        column.add_attribute(renderer, "accel-key", 1)
         treeview.append_column(column)
 
         class fake_guake:
